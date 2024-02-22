@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Paywall Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .paywall {
+            display: none;
+        }
+        .paywall-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+        .paywall-message {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .pay-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Sample Paywall Website</h1>
+    </header>
+    
+    <div class="content">
+        <h2>Welcome to Our Website!</h2>
+        <h1>Lorem Ipsum</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus venenatis mi, in tincidunt nisl
+            tempor et. Vestibulum sollicitudin, erat at rhoncus bibendum, lectus nibh aliquam libero, eu auctor nunc
+            mi nec odio.
+        </p>
+
+
+        <div class="paywall">
+            <p>
+                Sed ut consectetur felis. Nullam auctor felis et leo sollicitudin, a tempus velit consequat. Sed auctor
+                justo quis turpis rutrum, eu suscipit nulla vulputate. Nullam at velit eget nibh mollis ultricies.
+            </p>
+            <p>
+                Proin bibendum odio at lacus auctor, nec hendrerit est hendrerit. Nullam aliquet turpis nec nunc
+                fringilla, vitae blandit nulla convallis. Nullam ut justo tincidunt, rhoncus orci vel, sagittis elit.
+            </p>
+        </div>
+    </div>
+
+    <div class="paywall-overlay">
+        <div class="paywall-message">
+            <h2>Unlock Full Text</h2>
+            <p>To access the full text content, please make a payment.</p>
+            <button class="pay-button">Make Payment</button>
+        </div>
+    </div>
+
+    <script>
+        const payButton = document.querySelectorAll('.pay-button');
+        const paywallContent = document.querySelector('.paywall');
+        const paywallOverlay = document.querySelector('.paywall-overlay');
+
+        payButton.forEach(button => {
+            button.addEventListener('click', () => {
+                paywallContent.style.display = 'inline';
+                paywallOverlay.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
