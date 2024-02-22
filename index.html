@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <div id="javascript-warning" class="hidden">Nice Try Disabling Javascript</div>
+    <div id="javascript-warning" class="jsmsg" style="color: red;z-index:99;text-align:center;">Nice Try Disabling Javascript</div>
 
     <script>
         const payButton = document.querySelectorAll('.pay-button');
@@ -98,7 +98,7 @@
         const paywallOverlay = document.querySelector('.paywall-overlay');
         const javascriptWarning = document.getElementById('javascript-warning');
 
-         document.querySelectorAll('.#hidden').unhide();
+        javascriptWarning.style.display = 'none';
 
         payButton.forEach(button => {
             button.addEventListener('click', () => {
