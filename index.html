@@ -50,6 +50,9 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -79,7 +82,7 @@
         </div>
     </div>
 
-    <div class="paywall-overlay">
+    <div class="paywall-overlays">
         <div class="paywall-message">
             <h2>Unlock Full Text</h2>
             <p>To access the full text content, please make a payment.</p>
@@ -87,10 +90,15 @@
         </div>
     </div>
 
+    <div id="javascript-warning" class="hidden">Nice Try Disabling Javascript</div>
+
     <script>
         const payButton = document.querySelectorAll('.pay-button');
         const paywallContent = document.querySelector('.paywall');
         const paywallOverlay = document.querySelector('.paywall-overlay');
+        const javascriptWarning = document.getElementById('javascript-warning');
+
+         document.querySelectorAll('.#hidden').unhide();
 
         payButton.forEach(button => {
             button.addEventListener('click', () => {
